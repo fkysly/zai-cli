@@ -13,6 +13,10 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
 </p>
 
+> **Found this useful?** Follow [@nummanali](https://x.com/nummanali) for more AI tooling!
+
+---
+
 ## Features
 
 - **Vision** - Analyze images, screenshots, diagrams, charts, videos using GLM-4.6V
@@ -141,4 +145,3 @@ MIT - see [LICENSE](LICENSE).
 
 - [npm package](https://www.npmjs.com/package/zai-cli)
 - [OpenSkills](https://github.com/numman-ali/openskills)
-- [X: @nummanali](https://x.com/nummanali)
