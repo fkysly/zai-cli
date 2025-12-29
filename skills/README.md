@@ -1,17 +1,28 @@
 # Skills Marketplace
 
-This directory contains public skills for the marketplace. Each skill is a folder with a required `SKILL.md` plus optional `references/`, `scripts/`, or `assets/`.
+This directory contains skills for AI agents. Each skill has a `SKILL.md` file with YAML frontmatter and markdown instructions.
 
-## Available skills
+## Available Skills
 
-- `zai-cli` - Z.AI vision, search, reader, repo, and MCP tool discovery via the zai-cli CLI
+| Skill | Description |
+|-------|-------------|
+| [zai-cli](zai-cli/SKILL.md) | Z.AI vision, search, reader, and GitHub repo exploration |
 
-## Add a new skill
+## Install Skills
 
-1. Create a folder under `skills/` (lowercase letters, numbers, hyphens).
-2. Add `SKILL.md` with YAML front matter (`name`, `description`).
-3. Keep instructions concise and action-oriented.
-4. Add optional resources in `references/`, `scripts/`, or `assets/`.
-5. Update this README with the new skill.
+**OpenSkills** (universal):
+```bash
+npx openskills install numman-ali/zai-cli
+```
 
-See `skills/zai-cli/SKILL.md` for a working example.
+**Claude Code**:
+```bash
+claude skill install numman-ali/zai-cli --skill zai-cli
+```
+
+## Add a Skill
+
+1. Create a folder under `skills/` (lowercase, hyphens)
+2. Add `SKILL.md` with YAML frontmatter (`name`, `description`)
+3. Keep instructions concise - point to CLI `--help` for details
+4. Update this README

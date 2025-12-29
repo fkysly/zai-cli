@@ -1,36 +1,43 @@
 ---
 name: zai-cli
 description: |
-  Z.AI capabilities for agents via zai-cli: (1) Vision - analyze images, screenshots, diagrams, charts, videos, OCR, error diagnosis using GLM-4.6V (2) Search - real-time web search with domain/recency filtering (3) Reader - fetch and parse web page content to markdown (4) Repo - search and read GitHub repository code and documentation via ZRead. Use when needing to analyze visual content, search the web, read web pages, or explore GitHub repos. Requires Z_AI_API_KEY environment variable.
+  Z.AI CLI providing:
+  - Vision: image/video analysis, OCR, UI-to-code, error diagnosis (GLM-4.6V)
+  - Search: real-time web search with domain/recency filtering
+  - Reader: web page to markdown extraction
+  - Repo: GitHub code search and reading via ZRead
+  - Tools: MCP tool discovery and raw calls
+  - Code: TypeScript tool chaining
+  Use for visual content analysis, web search, page reading, or GitHub exploration. Requires Z_AI_API_KEY.
 ---
 
-# ZAI CLI Tools
+# ZAI CLI
 
-Access Z.AI capabilities via `npx zai-cli`. No installation required.
+Access Z.AI capabilities via `npx zai-cli`. The CLI is self-documenting - use `--help` at any level.
 
 ## Setup
-
-Set the `Z_AI_API_KEY` environment variable. The CLI provides clear guidance if missing.
 
 ```bash
 export Z_AI_API_KEY="your-api-key"
 ```
 
-Get your key at: https://z.ai/manage-apikey/apikey-list
+Get a key at: https://z.ai/manage-apikey/apikey-list
 
-## Capabilities
+## Commands
 
-| Domain | Use For | Command |
-|--------|---------|---------|
-| Vision | Images, screenshots, diagrams, videos | `npx zai-cli vision <cmd>` |
-| Search | Real-time web search | `npx zai-cli search <query>` |
-| Reader | Web page content extraction | `npx zai-cli read <url>` |
-| Repo | GitHub repository exploration | `npx zai-cli repo <cmd>` |
-| Tools | MCP discovery + schemas | `npx zai-cli tools` |
-| Call | Invoke any tool | `npx zai-cli call <tool>` |
-| Code | Tool chaining (TypeScript) | `npx zai-cli code <cmd>` |
+| Command | Purpose | Help |
+|---------|---------|------|
+| vision | Analyze images, screenshots, videos | `--help` for 8 subcommands |
+| search | Real-time web search | `--help` for filtering options |
+| read | Fetch web pages as markdown | `--help` for format options |
+| repo | GitHub code search and reading | `--help` for tree/search/read |
+| tools | List available MCP tools | |
+| tool | Show tool schema | |
+| call | Raw MCP tool invocation | |
+| code | TypeScript tool chaining | |
+| doctor | Check setup and connectivity | |
 
-## Quick Examples
+## Quick Start
 
 ```bash
 # Analyze an image
@@ -38,36 +45,18 @@ npx zai-cli vision analyze ./screenshot.png "What errors do you see?"
 
 # Search the web
 npx zai-cli search "React 19 new features" --count 5
+
+# Read a web page
+npx zai-cli read https://docs.example.com/api
+
+# Explore a GitHub repo
+npx zai-cli repo search facebook/react "server components"
+
+# Check setup
+npx zai-cli doctor
 ```
 
-## Output Format
+## Output
 
-Default output is **data-only** for token efficiency. Use `--output-format json` to wrap responses:
-
-```json
-{
-  "success": true,
-  "data": "...",
-  "timestamp": 1234567890
-}
-```
-
-Errors include actionable help (stderr):
-
-```json
-{
-  "success": false,
-  "error": "Error message",
-  "code": "ERROR_CODE",
-  "help": "How to fix..."
-}
-```
-
-## Detailed References
-
-- **Vision commands (8 tools)**: See [references/vision.md](references/vision.md) for all parameters and examples
-- **Search options**: See [references/search.md](references/search.md) for filtering and output format
-- **Reader options**: See [references/reader.md](references/reader.md) for format and caching options
-- **Repo commands**: See [references/zread.md](references/zread.md) for GitHub operations
-- **Tool discovery & raw calls**: See `zai-cli tools`, `zai-cli tool <name>`, and `zai-cli call <tool>` in the CLI help
-- **Code Mode**: See `zai-cli code --help` for tool-chaining workflows
+Default: **data-only** (raw output for token efficiency).
+Use `--output-format json` for `{ success, data, timestamp }` wrapping.
