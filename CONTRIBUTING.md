@@ -15,8 +15,6 @@ npm test
 
 - `packages/zai-cli` contains the CLI package.
 - `skills/` contains marketplace skills.
-- `spec/` contains the skill format specification.
-- `template/` contains a starter SKILL.md template.
 
 ## Adding a skill
 
@@ -25,7 +23,7 @@ npm test
 3. Add any optional resources in `references/`, `scripts/`, or `assets/`.
 4. Update `skills/README.md` with the new skill.
 
-See `spec/skills-spec.md` for the full format.
+See `skills/zai-cli/SKILL.md` for the full format.
 
 ## Quality checks
 

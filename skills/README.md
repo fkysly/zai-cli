@@ -14,4 +14,4 @@ This directory contains public skills for the marketplace. Each skill is a folde
 4. Add optional resources in `references/`, `scripts/`, or `assets/`.
 5. Update this README with the new skill.
 
-See `spec/skills-spec.md` and `template/SKILL.md` for the format.
+See `skills/zai-cli/SKILL.md` for a working example.

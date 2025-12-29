@@ -11,7 +11,7 @@ import { doctor, DOCTOR_HELP } from './commands/doctor.js';
 import { runCodeFile, evalCode, printInterfaces, printPromptTemplate, CODE_HELP } from './commands/code.js';
 import { outputError, setOutputMode } from './lib/output.js';
 
-const VERSION = '0.2.0';
+const VERSION = '1.0.0';
 
 const MAIN_HELP = `
 zai-cli v${VERSION} - CLI for Z.AI MCP services

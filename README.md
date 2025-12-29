@@ -31,8 +31,6 @@ See `skills/README.md` for contribution guidelines and the skill template.
 
 - `packages/zai-cli` - The npm package and CLI source
 - `skills/` - Marketplace skills
-- `spec/` - Skill format specification
-- `template/` - Skill template
 
 ## Development
 
