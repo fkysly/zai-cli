@@ -1,0 +1,59 @@
+{
+  "name": "zai-cli",
+  "version": "0.2.0",
+  "description": "CLI for Z.AI capabilities: vision analysis, web search, web reader, and GitHub repo exploration",
+  "type": "module",
+  "bin": {
+    "zai-cli": "./bin/zai-cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numman-ali/zai-cli.git",
+    "directory": "packages/zai-cli"
+  },
+  "homepage": "https://github.com/numman-ali/zai-cli",
+  "bugs": {
+    "url": "https://github.com/numman-ali/zai-cli/issues"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node --test tests/*.test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "zai",
+    "z.ai",
+    "vision",
+    "ocr",
+    "web-search",
+    "web-reader",
+    "github",
+    "cli",
+    "ai",
+    "glm"
+  ],
+  "author": "Numman Ali",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@utcp/code-mode": "^1.1.0",
+    "@utcp/sdk": "^1.1.0",
+    "@utcp/mcp": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
